@@ -852,7 +852,7 @@ module Jekyll
                       })
       end
       if actual_material.key?('zenodo_link')
-        if ! actual_material['zenodo_link'].empty?
+        if ! (actual_material.fetch('zenodo_link', '') || "").empty?
           mentions.push({
                           '@type': 'Thing',
                           url: (actual_material['zenodo_link']).to_s,
